@@ -1,0 +1,14 @@
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  .price {
+    transition: --num 0.4s;
+    counter-set: num var(--num);
+  }
+  .price::after {
+    content: counter(num);
+  }
+  
