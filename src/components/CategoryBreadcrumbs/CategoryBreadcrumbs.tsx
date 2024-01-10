@@ -4,6 +4,13 @@ import { Breadcrumbs, Link, Typography } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import _ from "lodash";
 
+const links = [
+  "Strona główna",
+  "Produkty na wymiar",
+  "Gabloty na wymiar",
+  "Gablota Wewnętrzna Antracyt",
+];
+
 type Props = {
   links: string[];
 };
