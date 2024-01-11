@@ -1,4 +1,8 @@
-export type Variable = RealVariable | BooleanVariable | IntegerVariable;
+export type Variable =
+  | RealVariable
+  | BooleanVariable
+  | IntegerVariable
+  | ChoiceVariable;
 
 type BooleanVariable = {
   type: "boolean";
@@ -27,4 +31,18 @@ type IntegerVariable = {
   step: number;
   initialValue: number;
   unit?: string;
+};
+
+export type ChoiceVariable = {
+  type: "choice";
+  options: ChoiceVariableOption[];
+  name: string;
+  label: string;
+  initialValue: number;
+  unit?: string;
+};
+
+type ChoiceVariableOption = {
+  name: string;
+  value: number;
 };

@@ -4,8 +4,9 @@ import { VariableSlider } from "../VariableSlider/VariableSlider";
 import { useDynamicPriceReducer } from "../../hooks/dynamicPriceReducer";
 import { VariableToggle } from "../VariableToggle/VariableToggle";
 import { Price } from "../Price/Price";
-import { TextField } from "@mui/material";
+import { ListItemText, MenuItem, TextField, Typography } from "@mui/material";
 import { VariableStepper } from "../VariableStepper/VariableStepper";
+import { VariableChoice } from "../VariableChoice/VariableChoice";
 
 type Props = {
   variables: Variable[];
@@ -21,7 +22,9 @@ function variablesToInitialState(variables: Variable[]) {
 
 const formula = (context: any) => {
   return (
-    context["length"] * context["width"] + (context["assembled"] ? 666 : 0)
+    context["length"] * context["width"] +
+    context["material"] +
+    (context["assembled"] ? 666 : 0)
   );
 };
 
@@ -68,6 +71,14 @@ export const DynamicVariables = ({ variables }: Props) => {
                 value={value}
                 onChange={onChangeHandler}
                 key={variable.name}
+              />
+            );
+          case "choice":
+            return (
+              <VariableChoice
+                onChange={onChangeHandler}
+                value={value}
+                variable={variable}
               />
             );
         }

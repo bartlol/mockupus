@@ -75,6 +75,26 @@ const item: Item = {
       name: "assembled",
     },
     {
+      type: "choice",
+      options: [
+        {
+          name: "Aluminium",
+          value: 500,
+        },
+        {
+          name: "Miedź",
+          value: 300,
+        },
+        {
+          name: "Stal",
+          value: 400,
+        },
+      ],
+      initialValue: 400,
+      label: "Materiał",
+      name: "material",
+    },
+    {
       type: "int",
       initialValue: 1,
       label: "Ilość sztuk",
@@ -82,13 +102,6 @@ const item: Item = {
     },
   ],
 };
-
-const links = [
-  "Strona główna",
-  "Produkty na wymiar",
-  "Gabloty na wymiar",
-  "Gablota Wewnętrzna Antracyt",
-];
 
 export const ShopPage = () => {
   return (
