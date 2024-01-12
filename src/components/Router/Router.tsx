@@ -1,7 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Root } from "../../pages/Root/Root";
-import { ShopPage } from "../../pages/ShopPage";
 import { MockupPage } from "../../pages/MockupPage/MockupPage";
 import { TOPAL_MOCKUP } from "../../mockupData/topalMockup";
 import { OKNA_MOCKUP } from "../../mockupData/oknaMockup";

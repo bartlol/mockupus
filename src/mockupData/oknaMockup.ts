@@ -1,46 +1,17 @@
 import { Item } from "../Models/Item";
-import { Opinion } from "../Models/Opinion";
 import { Mockup } from "../Models/Mockup";
+import { GENERIC_OPINIONS } from "./genericOpinions";
 
-const opinions: Opinion[] = [
-  {
-    date: new Date("2024-01-04T22:11:00.123Z"),
-    opinion: "Koment",
-    rate: 5,
-    username: "Grzegorz Floryda",
-  },
-  {
-    date: new Date("2024-01-04T22:11:00.123Z"),
-    opinion: "Koment2",
-    rate: 5,
-    username: "MatiVati",
-  },
-  {
-    date: new Date("2024-01-05T20:37:00.222Z"),
-    opinion: "komnet3",
-    rate: 4,
-    username: "Jan2",
-  },
-  {
-    date: new Date("2024-01-06T20:37:00.222Z"),
-    opinion: "Koment 4",
-    rate: 5,
-    username: "Marek",
-  },
-];
 const item: Item = {
   name: "Jakis przedmiot",
   companyName: "Microsoft",
   productId: "sampleId",
   description: "Produkt topowej firmy\nMozna od razy uzywac",
-  companyLogoUrl:
-    "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31",
   photoUrls: [
     "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4mRni?ver=a707&q=90&m=6&h=270&w=270&b=%23FF2F2F2F&f=jpg&o=f&aim=true",
   ],
   rating: 2.1,
-  isFavourite: true,
-  opinions,
+  opinions: GENERIC_OPINIONS,
   variables: [
     {
       type: "real",
@@ -99,6 +70,7 @@ const item: Item = {
 
 export const OKNA_MOCKUP: Mockup = {
   item: item,
-  companyLogoUrl: "https://topal.com.pl/data/gfx/mask/pol/logo_1_big.png",
+  companyLogoUrl:
+    "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31",
   primaryColor: "#559944",
 };

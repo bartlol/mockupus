@@ -83,30 +83,8 @@ export const ItemDisplay = ({ item }: Props) => {
 
         <CardSection>
           <ColumnStack>
-            <RowStack
-              sx={{
-                flex: 1,
-                justifyContent: "space-between",
-              }}
-            >
-              <Typography variant="h6">Firma: {item.companyName}</Typography>
-              <Box
-                component="img"
-                src={item.companyLogoUrl}
-                alt={`${item.companyName} logo`}
-                sx={{
-                  maxWidth: "100px",
-                }}
-              />
-            </RowStack>
-            <Divider flexItem />
-            <Typography
-              variant="body1"
-              sx={{
-                whiteSpace: "break-spaces",
-              }}
-            >
-              {item.description}
+            <Typography variant="h5" fontWeight={"bold"}>
+              Konfigurator
             </Typography>
             <DynamicVariables variables={item.variables} />
             <Button variant="contained" startIcon={<AddShoppingCartIcon />}>

@@ -1,13 +1,16 @@
 import { AppBar, Badge, Box, IconButton, Toolbar } from "@mui/material";
-import React from "react";
-import { Logo } from "../Logo/Logo";
+import React, { ReactNode } from "react";
 import { SearchBar } from "../SearchBar/SearchBar";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import { RowStack } from "../RowStack/RowStack";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-export const Navbar = () => {
+
+type Props = {
+  logo: ReactNode;
+};
+
+export const Navbar = ({ logo }: Props) => {
   return (
     <AppBar position="static">
       <Toolbar
@@ -15,7 +18,7 @@ export const Navbar = () => {
           justifyContent: "space-between",
         }}
       >
-        <Logo />
+        {logo}
         <RowStack gap={4}>
           <SearchBar />
           <RowStack>

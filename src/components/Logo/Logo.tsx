@@ -1,11 +1,15 @@
-import { Box } from "@mui/material";
 import React from "react";
+import { Box } from "@mui/material";
 
-export const Logo = () => {
+type Props = {
+  logoUrl: string;
+};
+
+export const Logo = ({ logoUrl }: Props) => {
   return (
     <Box
       component={"img"}
-      src="https://topal.com.pl/data/gfx/mask/pol/logo_1_big.png"
+      src={logoUrl}
       sx={{
         height: "64px",
         mixBlendMode: "multiply",

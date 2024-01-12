@@ -1,21 +1,22 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { ReactNode } from "react";
-import { Navbar } from "../components/Navbar/Navbar";
 
 type Props = {
+  appBar: ReactNode;
   children: ReactNode;
 };
 
-export const PageLayout = ({ children }: Props) => {
+export const PageLayout = ({ appBar, children }: Props) => {
   return (
     <Box sx={{ backgroundColor: "#fafafa" }}>
-      <Navbar />
+      {appBar}
       <Box
         sx={{
           paddingY: 4,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          marginX: "auto",
         }}
       >
         {children}
