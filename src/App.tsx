@@ -1,23 +1,10 @@
-import { ThemeProvider, createTheme } from "@mui/material";
-import { ShopPage } from "./pages/ShopPage";
+import React from "react";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#8888aa",
-    },
-    secondary: {
-      main: "#444488",
-    },
-  },
-});
+import { ShopPage } from "./pages/ShopPage";
+import { Router } from "./components/Router/Router";
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <ShopPage />
-    </ThemeProvider>
-  );
+  return <Router />;
 }
 
 export default App;
