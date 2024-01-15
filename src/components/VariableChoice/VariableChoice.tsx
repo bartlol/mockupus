@@ -29,6 +29,7 @@ export const VariableChoice = ({ variable, onChange, value }: Props) => {
         value={value.toString()}
         label={variable.label}
         onChange={handleChange}
+        variant="outlined"
       >
         {variable.options.map((option) => (
           <MenuItem
@@ -36,7 +37,7 @@ export const VariableChoice = ({ variable, onChange, value }: Props) => {
             value={option.value}
             sx={{ display: "flex" }}
           >
-            <ListItemText>{option.name}</ListItemText>
+            {option.name}
           </MenuItem>
         ))}
       </Select>

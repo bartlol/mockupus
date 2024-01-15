@@ -14,6 +14,26 @@ const item: Item = {
   opinions: GENERIC_OPINIONS,
   variables: [
     {
+      type: "choice",
+      options: [
+        {
+          name: "Aluminium",
+          value: 500,
+        },
+        {
+          name: "Miedź",
+          value: 300,
+        },
+        {
+          name: "Stal",
+          value: 400,
+        },
+      ],
+      initialValue: 400,
+      label: "Materiał",
+      name: "material",
+    },
+    {
       type: "real",
       min: 10,
       max: 100,
@@ -39,26 +59,7 @@ const item: Item = {
       label: "Złożone",
       name: "assembled",
     },
-    {
-      type: "choice",
-      options: [
-        {
-          name: "Aluminium",
-          value: 500,
-        },
-        {
-          name: "Miedź",
-          value: 300,
-        },
-        {
-          name: "Stal",
-          value: 400,
-        },
-      ],
-      initialValue: 400,
-      label: "Materiał",
-      name: "material",
-    },
+
     {
       type: "int",
       initialValue: 1,

@@ -16,32 +16,6 @@ const item: Item = {
   opinions: GENERIC_OPINIONS,
   variables: [
     {
-      type: "real",
-      min: 10,
-      max: 100,
-      name: "length",
-      initialValue: 50,
-      label: "Długość",
-      unit: "cm",
-      step: 5,
-    },
-    {
-      type: "real",
-      min: 50,
-      max: 200,
-      name: "width",
-      initialValue: 100,
-      label: "Szerokość",
-      unit: "cm",
-      step: 10,
-    },
-    {
-      type: "boolean",
-      initialValue: false,
-      label: "Złożone",
-      name: "assembled",
-    },
-    {
       type: "choice",
       options: [
         {
@@ -61,6 +35,33 @@ const item: Item = {
       label: "Materiał",
       name: "material",
     },
+    {
+      type: "real",
+      min: 10,
+      max: 100,
+      name: "length",
+      initialValue: 50,
+      label: "Długość",
+      unit: "cm",
+      step: 1,
+    },
+    {
+      type: "real",
+      min: 50,
+      max: 200,
+      name: "width",
+      initialValue: 100,
+      label: "Szerokość",
+      unit: "cm",
+      step: 1,
+    },
+    {
+      type: "boolean",
+      initialValue: false,
+      label: "Złożone",
+      name: "assembled",
+    },
+
     {
       type: "int",
       initialValue: 1,

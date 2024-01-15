@@ -10,21 +10,20 @@ export const GENERIC_OPINIONS: Opinion[] = [
   },
   {
     date: new Date("2024-01-05T19:32:12.222Z"),
-    opinion:
-      "Jestem zachwycona! Produkt jest solidny i taki jak skonfigurowałam. Polecam.",
+    opinion: "Polecam! Solidny produkt i dokładnie taki jak skonfigurowałam.",
     rate: 5,
     username: "Olaa",
   },
   {
     date: new Date("2024-01-06T20:32:42.222Z"),
     opinion:
-      "Super jest ten konfigurator, świetny dla kogoś tak wymagającego jak ja. Mogłem dostosować każdy aspekt produktu, co dało mi poczucie, że otrzymuję naprawdę unikalny produkt. Super!",
+      "Świetny konfigurator, mogłem dostosować wszystko to co chciałem. Na pewno skorzystam ponownie!",
     rate: 5,
     username: "Marekk",
   },
   {
     date: new Date("2024-01-10T23:11:22.123Z"),
-    opinion: "Solidne wykonanie, polecam. Wymiary sie zgadzają. Szczelna.",
+    opinion: "Polecam! Szybka dostawa i wykonane tak jak skonfigurowałem.",
     rate: 5,
     username: "KamilB",
   },

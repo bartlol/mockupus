@@ -3,6 +3,7 @@ import { DynamicPrice } from "../DynamicPrice";
 import {
   Box,
   Button,
+  Container,
   Divider,
   IconButton,
   Link,
@@ -38,11 +39,15 @@ const links = [
 
 export const ItemDisplay = ({ item }: Props) => {
   return (
-    <ColumnStack gap={4}>
+    <ColumnStack gap={4} sx={{ maxWidth: "940px" }}>
       <Box>
         <CategoryBreadcrumbs links={links} />
       </Box>
-      <RowStack gap={6} alignItems={"flex-start"}>
+      <RowStack
+        gap={6}
+        alignItems={"flex-start"}
+        justifyContent={"space-evenly"}
+      >
         <CardSection>
           <ColumnStack gap={3}>
             <Box>
@@ -70,7 +75,7 @@ export const ItemDisplay = ({ item }: Props) => {
                     precision={0.1}
                   />
                 </RowStack>
-                <Link href="#">14 ocen i 6 recenzji</Link>
+                <Link href="#">{`14 ocen i ${item.opinions.length} opinii`}</Link>
                 <Divider flexItem orientation="vertical" />
                 <Typography color="GrayText" variant="caption">
                   {"18 osób już kupiło ten produkt"}
@@ -83,13 +88,16 @@ export const ItemDisplay = ({ item }: Props) => {
 
         <CardSection>
           <ColumnStack>
-            <Typography variant="h5" fontWeight={"bold"}>
-              Konfigurator
-            </Typography>
-            <DynamicVariables variables={item.variables} />
+            <ColumnStack gap={2}>
+              <Typography variant="h5" fontWeight={"bold"}>
+                Konfigurator
+              </Typography>
+              <DynamicVariables variables={item.variables} />
+            </ColumnStack>
             <Button variant="contained" startIcon={<AddShoppingCartIcon />}>
               Dodaj do koszyka
             </Button>
+            <Divider />
             <RowStack>
               <ScheduleIcon />
               <Typography>Wysyłka w piątek</Typography>

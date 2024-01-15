@@ -9,6 +9,7 @@ type Props = {
   min: number;
   max: number;
   step: number;
+  unit: string;
 };
 
 export const VariableSlider = ({
@@ -18,6 +19,7 @@ export const VariableSlider = ({
   max,
   min,
   step,
+  unit,
 }: Props) => {
   const handleSliderChange = (_: Event, value: number | number[]) => {
     if (Array.isArray(value)) {
@@ -37,13 +39,23 @@ export const VariableSlider = ({
   //       setValue(100);
   //     }
   //   };
+  const marks = [
+    {
+      value: min,
+      label: min.toString(),
+    },
+    {
+      value: max,
+      label: max.toString(),
+    },
+  ];
 
   return (
     <Box>
       <Typography id="input-slider" gutterBottom>
-        {label}
+        {`${label} [${unit}]`}
       </Typography>
-      <RowStack gap={2} sx={{ ml: 1 }}>
+      <RowStack gap={4} sx={{ ml: 1 }}>
         <Slider
           sx={{
             flex: 4,
@@ -54,6 +66,8 @@ export const VariableSlider = ({
           step={step}
           min={min}
           max={max}
+          marks={marks}
+          size={"medium"}
         />
         <Input
           sx={{

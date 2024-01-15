@@ -1,8 +1,6 @@
 import {
   TableContainer,
-  Paper,
   Table,
-  TableHead,
   TableRow,
   TableCell,
   TableBody,

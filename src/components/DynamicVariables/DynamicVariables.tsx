@@ -53,6 +53,7 @@ export const DynamicVariables = ({ variables }: Props) => {
                 max={variable.max}
                 onChange={onChangeHandler}
                 key={variable.name}
+                unit={variable.unit!}
               />
             );
           case "boolean":

@@ -16,12 +16,10 @@ export const PageLayout = ({ appBar, children }: Props) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginX: "auto",
         }}
       >
         {children}
       </Box>
-      ;
     </Box>
   );
 };
