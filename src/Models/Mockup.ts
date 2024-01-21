@@ -4,4 +4,5 @@ export type Mockup = {
   item: Item;
   primaryColor: string;
   companyLogoUrl: string;
+  companyName: string;
 };

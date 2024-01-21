@@ -5,6 +5,7 @@ import { ItemDisplay } from "../../components/ItemDisplay/ItemDisplay";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Logo } from "../../components/Logo/Logo";
+import { Footer } from "../../components/Footer/Footer";
 
 type Props = {
   mockup: Mockup;
@@ -30,6 +31,12 @@ export const MockupPage = ({ mockup }: Props) => {
     <ThemeProvider theme={theme}>
       <PageLayout
         appBar={<Navbar logo={<Logo logoUrl={mockup.companyLogoUrl} />} />}
+        footer={
+          <Footer
+            logo={<Logo logoUrl={mockup.companyLogoUrl} />}
+            companyName={mockup.companyName}
+          />
+        }
       >
         <ItemDisplay item={mockup.item} />
       </PageLayout>

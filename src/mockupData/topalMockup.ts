@@ -75,4 +75,5 @@ export const TOPAL_MOCKUP: Mockup = {
   item: item,
   companyLogoUrl: "https://topal.com.pl/data/gfx/mask/pol/logo_1_big.png",
   primaryColor: "#8888aa",
+  companyName: "Topal",
 };

@@ -13,6 +13,8 @@ export const Logo = ({ logoUrl }: Props) => {
       sx={{
         height: "64px",
         mixBlendMode: "multiply",
+        // width: "auto",
+        objectFit: "contain",
       }}
       alt="Logo sklepu"
     />
