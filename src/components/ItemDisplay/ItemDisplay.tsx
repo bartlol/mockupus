@@ -87,7 +87,7 @@ export const ItemDisplay = ({ item }: Props) => {
         </CardSection>
 
         <CardSection>
-          <ColumnStack>
+          <ColumnStack gap={2}>
             <ColumnStack gap={2}>
               <Typography variant="h5" fontWeight={"bold"}>
                 Konfigurator
@@ -98,18 +98,26 @@ export const ItemDisplay = ({ item }: Props) => {
               Dodaj do koszyka
             </Button>
             <Divider />
-            <RowStack>
-              <ScheduleIcon />
-              <Typography>Wysyłka w piątek</Typography>
-            </RowStack>
-            <RowStack>
-              <LocalShippingIcon />
-              <Typography>Darmowa i szybka dostawa od 2 000.00zł</Typography>
-            </RowStack>
-            <RowStack>
-              <ShieldIcon />
-              <Typography>Bezpieczne zakupy</Typography>
-            </RowStack>
+            <ColumnStack>
+              <RowStack>
+                <ScheduleIcon fontSize="small" />
+                <Typography variant="subtitle2">Wysyłka w piątek</Typography>
+              </RowStack>
+              <RowStack>
+                <LocalShippingIcon fontSize="small" />
+                <Typography variant="subtitle2">
+                  Darmowa i szybka dostawa od 2 000.00zł
+                </Typography>
+              </RowStack>
+              <RowStack>
+                <ShieldIcon fontSize="small" />
+                <Typography variant="subtitle2">Bezpieczne zakupy</Typography>
+              </RowStack>
+            </ColumnStack>
+            <Divider />
+            <Link href="#" sx={{ alignSelf: "center" }}>
+              Warunki zwrotu i gwarancji
+            </Link>
           </ColumnStack>
         </CardSection>
       </RowStack>
