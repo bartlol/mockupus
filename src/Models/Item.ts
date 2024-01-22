@@ -9,4 +9,6 @@ export type Item = {
   rating: number;
   opinions: Opinion[];
   variables: Variable[];
+  breadCrumbs: string[];
+  formula: string;
 };

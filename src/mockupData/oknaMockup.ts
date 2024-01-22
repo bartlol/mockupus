@@ -75,4 +75,5 @@ export const OKNA_MOCKUP: Mockup = {
     "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31",
   primaryColor: "#77aa44",
   companyName: "Microsoft",
+  logoOnBackground: true,
 };

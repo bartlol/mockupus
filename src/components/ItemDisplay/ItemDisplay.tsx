@@ -31,18 +31,11 @@ type Props = {
   item: Item;
 };
 
-const links = [
-  "Strona główna",
-  "Produkty na wymiar",
-  "Gabloty na wymiar",
-  "Gablota Wewnętrzna Antracyt",
-];
-
 export const ItemDisplay = ({ item }: Props) => {
   return (
     <ColumnStack gap={4} sx={{ maxWidth: "940px" }}>
       <Box>
-        <CategoryBreadcrumbs links={links} />
+        <CategoryBreadcrumbs links={item.breadCrumbs} />
       </Box>
       <RowStack
         gap={6}
@@ -56,14 +49,14 @@ export const ItemDisplay = ({ item }: Props) => {
                 <Typography variant="h5" fontWeight={"bold"}>
                   {item.name}
                 </Typography>
-                <Box>
+                <RowStack gap={0}>
                   <IconButton>
                     <FavoriteBorderIcon />
                   </IconButton>
                   <IconButton>
                     <ShareIcon />
                   </IconButton>
-                </Box>
+                </RowStack>
               </RowStack>
               <RowStack>
                 <RowStack>
@@ -83,7 +76,9 @@ export const ItemDisplay = ({ item }: Props) => {
                 </Typography>
               </RowStack>
             </Box>
-            <ImageGallery imageUrls={item.photoUrls} />
+            <Box sx={{ alignSelf: "center" }}>
+              <ImageGallery imageUrls={item.photoUrls} />
+            </Box>
           </ColumnStack>
         </CardSection>
 
@@ -93,7 +88,10 @@ export const ItemDisplay = ({ item }: Props) => {
               <Typography variant="h5" fontWeight={"bold"}>
                 Konfigurator
               </Typography>
-              <DynamicVariables variables={item.variables} />
+              <DynamicVariables
+                variables={item.variables}
+                formula={item.formula}
+              />
             </ColumnStack>
             <Button variant="contained" startIcon={<AddShoppingCartIcon />}>
               Dodaj do koszyka

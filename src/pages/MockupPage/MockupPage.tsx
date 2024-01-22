@@ -30,10 +30,24 @@ export const MockupPage = ({ mockup }: Props) => {
   return (
     <ThemeProvider theme={theme}>
       <PageLayout
-        appBar={<Navbar logo={<Logo logoUrl={mockup.companyLogoUrl} />} />}
+        appBar={
+          <Navbar
+            logo={
+              <Logo
+                logoUrl={mockup.companyLogoUrl}
+                withBackground={mockup.logoOnBackground}
+              />
+            }
+          />
+        }
         footer={
           <Footer
-            logo={<Logo logoUrl={mockup.companyLogoUrl} />}
+            logo={
+              <Logo
+                logoUrl={mockup.companyLogoUrl}
+                withBackground={mockup.logoOnBackground}
+              />
+            }
             companyName={mockup.companyName}
           />
         }

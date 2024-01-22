@@ -61,7 +61,6 @@ const item: Item = {
       label: "Złożone",
       name: "assembled",
     },
-
     {
       type: "int",
       initialValue: 1,
@@ -69,6 +68,14 @@ const item: Item = {
       name: "quantity",
     },
   ],
+  breadCrumbs: [
+    "Strona główna",
+    "Produkty na wymiar",
+    "Gabloty na wymiar",
+    "Gablota Wewnętrzna Antracyt",
+  ],
+  formula:
+    '(context["length"] * context["width"] +context["material"] +(context["assembled"] ? 666 : 0));',
 };
 
 export const TOPAL_MOCKUP: Mockup = {
@@ -76,4 +83,5 @@ export const TOPAL_MOCKUP: Mockup = {
   companyLogoUrl: "https://topal.com.pl/data/gfx/mask/pol/logo_1_big.png",
   primaryColor: "#9999bb",
   companyName: "Topal",
+  logoOnBackground: false,
 };

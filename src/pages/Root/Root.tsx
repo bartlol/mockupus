@@ -10,6 +10,9 @@ export const Root = () => {
       <li>
         <Link to={`okna`}>okna</Link>
       </li>
+      <li>
+        <Link to={`kartony24`}>kartony24</Link>
+      </li>
     </ul>
   );
 };

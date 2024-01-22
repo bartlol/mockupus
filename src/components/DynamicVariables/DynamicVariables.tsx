@@ -10,6 +10,7 @@ import { VariableChoice } from "../VariableChoice/VariableChoice";
 
 type Props = {
   variables: Variable[];
+  formula: string;
 };
 
 function variablesToInitialState(variables: Variable[]) {
@@ -20,15 +21,11 @@ function variablesToInitialState(variables: Variable[]) {
   return initialState;
 }
 
-const formula = (context: any) => {
-  return (
-    context["length"] * context["width"] +
-    context["material"] +
-    (context["assembled"] ? 666 : 0)
-  );
+const executeFormula = (formula: string, context: any) => {
+  return Math.floor(eval(formula));
 };
 
-export const DynamicVariables = ({ variables }: Props) => {
+export const DynamicVariables = ({ variables, formula }: Props) => {
   const [state, dispatch] = useDynamicPriceReducer(
     variablesToInitialState(variables)
   );
@@ -85,7 +82,7 @@ export const DynamicVariables = ({ variables }: Props) => {
         }
       })}
       <Price
-        price={formula(state) * state["quantity"]}
+        price={executeFormula(formula, state) * state["quantity"]}
         quantity={state["quantity"]}
       />
     </>
