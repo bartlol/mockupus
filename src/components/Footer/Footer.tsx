@@ -32,26 +32,48 @@ export const Footer = ({ logo, companyName }: Props) => {
         <ColumnStack gap={2}>
           <RowStack justifyContent={"center"} gap={4}>
             <ColumnStack alignItems={"center"} gap={0}>
-              <Link href={"#"} color={"inherit"} variant="h4">
+              <Link
+                href={"#"}
+                sx={{
+                  color: (theme) => theme.palette.primary.contrastText,
+                }}
+                variant="h4"
+              >
                 555-666-777
               </Link>
               <Typography
                 variant="caption"
                 sx={{
-                  color: (theme) => theme.palette.secondary.main,
+                  color: (theme) => theme.palette.primary.contrastText,
                 }}
               >
                 pon-pt 8-20 sob-nd 10-18
               </Typography>
             </ColumnStack>
-            <Typography>{`biuro@${companyName.toLowerCase()}.pl`}</Typography>
-            <Link href={"#"} color={"inherit"}>
+            <Link
+              href={"#"}
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >{`biuro@${companyName.toLowerCase()}.pl`}</Link>
+            <Link
+              href={"#"}
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               Dane kontaktowe
             </Link>
           </RowStack>
           <Divider flexItem />
           <RowStack justifyContent={"space-evenly"} alignItems={"start"}>
-            <Typography fontWeight={"bold"} variant="h6">
+            <Typography
+              fontWeight={"bold"}
+              variant="subtitle1"
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               Ważne linki
             </Typography>
             <RowStack
@@ -59,22 +81,35 @@ export const Footer = ({ logo, companyName }: Props) => {
               gap={8}
               alignItems={"start"}
             >
-              <ColumnStack>
-                <Typography variant="caption">Strona główna</Typography>
-                <Typography variant="caption">Odstąpienia od umowy</Typography>
-                <Typography variant="caption">Affiliate Program</Typography>
-                <Typography variant="caption">Najczęstsze pytania</Typography>
-              </ColumnStack>
-              <ColumnStack>
-                <Typography variant="caption">Jak kupować?</Typography>
-                <Typography variant="caption">Reklamacje</Typography>
-                <Typography variant="caption">Recenzje produktow</Typography>
-                <Typography variant="caption">Sposób dostawy</Typography>
-              </ColumnStack>
-              <ColumnStack>
-                <Typography variant="caption">Regulamin zakupów</Typography>
-                <Typography variant="caption">Dla partnerów</Typography>
-              </ColumnStack>
+              {[
+                [
+                  "Strona główna",
+                  "Odstąpienia od umowy",
+                  "Affiliate Program",
+                  "Najczęstsze pytania",
+                ],
+                [
+                  "Jak kupować?",
+                  "Reklamacje",
+                  "Recenzje produktów",
+                  "Sposób dostawy",
+                ],
+                ["Regulamin zakupów", "Dla partnerów"],
+              ].map((group) => (
+                <ColumnStack>
+                  {group.map((text) => (
+                    <Link
+                      href={"#"}
+                      variant="caption"
+                      sx={{
+                        color: (theme) => theme.palette.primary.contrastText,
+                      }}
+                    >
+                      {text}
+                    </Link>
+                  ))}
+                </ColumnStack>
+              ))}
             </RowStack>
           </RowStack>
           <Divider flexItem />
@@ -82,16 +117,32 @@ export const Footer = ({ logo, companyName }: Props) => {
         <ColumnStack sx={{ alignItems: "center" }} gap={0}>
           {logo}
           <RowStack gap={0}>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               <InstagramIcon />
             </IconButton>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               <FacebookIcon />
             </IconButton>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               <XIcon />
             </IconButton>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.primary.contrastText,
+              }}
+            >
               <YouTubeIcon />
             </IconButton>
           </RowStack>

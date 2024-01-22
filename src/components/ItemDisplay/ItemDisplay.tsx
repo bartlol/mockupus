@@ -26,6 +26,7 @@ import { DynamicVariables } from "../DynamicVariables/DynamicVariables";
 import { CategoryBreadcrumbs } from "../CategoryBreadcrumbs/CategoryBreadcrumbs";
 import { CardSection } from "../../layout/CardSection";
 import { Parameters } from "../Parameters/Parameters";
+import { Description } from "../Description/Description";
 type Props = {
   item: Item;
 };
@@ -122,6 +123,7 @@ export const ItemDisplay = ({ item }: Props) => {
         </CardSection>
       </RowStack>
       <Parameters />
+      <Description description={item.description} />
       <ItemOpinions opinions={item.opinions} />
     </ColumnStack>
   );
