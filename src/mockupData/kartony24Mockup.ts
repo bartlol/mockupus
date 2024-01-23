@@ -85,8 +85,11 @@ const item: Item = {
     },
   ],
   breadCrumbs: ["Kartony24", "Kartony", "Kartony na wymiar"],
-  formula:
-    '(((context["length"] + context["width"] + context["height"]) * 0.01) * context["color"] * context["material"]);',
+  formula: (context) =>
+    (context["length"] + context["width"] + context["height"]) *
+    0.01 *
+    context["color"] *
+    context["material"],
 };
 
 export const KARTONY24_MOCKUP: Mockup = {

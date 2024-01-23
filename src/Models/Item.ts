@@ -1,3 +1,4 @@
+import { Formula } from "./Formula";
 import { Opinion } from "./Opinion";
 import { Variable } from "./Variable";
 
@@ -10,5 +11,5 @@ export type Item = {
   opinions: Opinion[];
   variables: Variable[];
   breadCrumbs: string[];
-  formula: string;
+  formula: Formula;
 };

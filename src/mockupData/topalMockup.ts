@@ -74,8 +74,10 @@ const item: Item = {
     "Gabloty na wymiar",
     "Gablota Wewnętrzna Antracyt",
   ],
-  formula:
-    '(context["length"] * context["width"] +context["material"] +(context["assembled"] ? 666 : 0));',
+  formula: (context) =>
+    context["length"] * context["width"] +
+    context["material"] +
+    (context["assembled"] ? 666 : 0),
 };
 
 export const TOPAL_MOCKUP: Mockup = {

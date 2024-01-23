@@ -59,7 +59,6 @@ const item: Item = {
       label: "Złożone",
       name: "assembled",
     },
-
     {
       type: "int",
       initialValue: 1,

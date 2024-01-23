@@ -82,7 +82,7 @@ export const DynamicVariables = ({ variables, formula }: Props) => {
         }
       })}
       <Price
-        price={executeFormula(formula, state) * state["quantity"]}
+        price={formula(state) * state["quantity"]}
         quantity={state["quantity"]}
       />
     </>
