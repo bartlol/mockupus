@@ -28,7 +28,7 @@ export const Kartony24Description = () => {
         biodegradowalny. Dzięki niemu{" "}
         <Typography fontWeight={"bold"} component="span">
           ograniczysz czas na pakowanie swoich
-        </Typography>
+        </Typography>{" "}
         produktów do minimum. Bez użycia taśmy złożysz go w 2 sekundy, a dzięki
         zrywce Twój Klient otworzy paczkę z lekkością i uśmiechem w takim samym
         czasie.
