@@ -1,16 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import styles from "./AnimatedNumber.module.css";
+import React from "react";
+import { useAnimatedNumber } from "../../hooks/useAnimatedNumber";
 
 const AnimatedNumber = ({ num }: { num: number }) => {
-  const numRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (numRef.current) {
-      numRef.current.style.setProperty("--num", num.toString());
-    }
-  }, [num]);
-
-  return <span className={styles.price} ref={numRef} />;
+  const val = useAnimatedNumber(num);
+  return <span>{val.toFixed(2)}</span>;
 };
 
 export default AnimatedNumber;

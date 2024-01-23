@@ -22,7 +22,7 @@ function variablesToInitialState(variables: Variable[]) {
 }
 
 const executeFormula = (formula: string, context: any) => {
-  return Math.floor(eval(formula));
+  return (eval(formula) as number).toFixed(2);
 };
 
 export const DynamicVariables = ({ variables, formula }: Props) => {
