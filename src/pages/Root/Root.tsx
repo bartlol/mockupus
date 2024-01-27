@@ -5,12 +5,6 @@ export const Root = () => {
   return (
     <ul>
       <li>
-        <Link to={`topal`}>topal</Link>
-      </li>
-      <li>
-        <Link to={`okna`}>okna</Link>
-      </li>
-      <li>
         <Link to={`kartony`}>kartony</Link>
       </li>
       <li>
