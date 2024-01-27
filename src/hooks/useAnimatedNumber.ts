@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ANIMATION_TIME_MS = 300;
+const ANIMATION_TIME_MS = 200;
 const DELAY_MS = 16;
 
 export const useAnimatedNumber = (currentValue: number) => {

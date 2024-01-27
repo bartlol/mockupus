@@ -68,6 +68,7 @@ export const VariableSlider = ({
           max={max}
           marks={marks}
           size={"medium"}
+          color="config"
         />
         <Input
           sx={{

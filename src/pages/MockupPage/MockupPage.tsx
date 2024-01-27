@@ -11,21 +11,49 @@ type Props = {
   mockup: Mockup;
 };
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    config: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    config?: PaletteOptions["primary"];
+  }
+}
+
+declare module "@mui/material/ToggleButtonGroup" {
+  interface ToggleButtonGroupPropsColorOverrides {
+    config: true;
+  }
+}
+
 export const MockupPage = ({ mockup }: Props) => {
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          primary: {
-            main: mockup.primaryColor,
-          },
-          secondary: {
-            main: "#444488",
-          },
+  const theme = useMemo(() => {
+    const partialTheme = createTheme({
+      palette: {
+        primary: {
+          main: mockup.primaryColor,
         },
-      }),
-    [mockup.primaryColor]
-  );
+        secondary: {
+          main: mockup.secondaryColor,
+        },
+        //   config: {
+        //     main: mockup.configColor,
+        //   },
+      },
+    });
+    return createTheme(partialTheme, {
+      // Custom colors created with augmentColor go here
+      palette: {
+        config: partialTheme.palette.augmentColor({
+          color: {
+            main: mockup.configColor,
+          },
+          name: "config",
+        }),
+      },
+    });
+  }, [mockup.primaryColor, mockup.secondaryColor, mockup.configColor]);
 
   return (
     <ThemeProvider theme={theme}>

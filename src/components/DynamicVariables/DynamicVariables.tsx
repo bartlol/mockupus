@@ -7,6 +7,8 @@ import { Price } from "../Price/Price";
 import { ListItemText, MenuItem, TextField, Typography } from "@mui/material";
 import { VariableStepper } from "../VariableStepper/VariableStepper";
 import { VariableChoice } from "../VariableChoice/VariableChoice";
+import { VariableToggleChoice } from "../VariableToggleChoice/VariableToggleChoice";
+import { ColumnStack } from "../ColumnStack/ColumnStack";
 
 type Props = {
   variables: Variable[];
@@ -31,7 +33,7 @@ export const DynamicVariables = ({ variables, formula }: Props) => {
   );
 
   return (
-    <>
+    <ColumnStack gap={3}>
       {variables.map((variable) => {
         const value = state[variable.name];
         const onChangeHandler = (value: number) =>
@@ -79,12 +81,20 @@ export const DynamicVariables = ({ variables, formula }: Props) => {
                 variable={variable}
               />
             );
+          case "toggle":
+            return (
+              <VariableToggleChoice
+                onChange={onChangeHandler}
+                value={value}
+                variable={variable}
+              />
+            );
         }
       })}
       <Price
         price={formula(state) * state["quantity"]}
         quantity={state["quantity"]}
       />
-    </>
+    </ColumnStack>
   );
 };

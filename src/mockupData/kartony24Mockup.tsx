@@ -17,38 +17,6 @@ const item: Item = {
   opinions: GENERIC_OPINIONS,
   variables: [
     {
-      type: "choice",
-      options: [
-        {
-          name: "Fala B (grubość 2,6mm)",
-          value: 1.3,
-        },
-        {
-          name: "Fala E (grubość 1,5mm)",
-          value: 1,
-        },
-      ],
-      initialValue: 1,
-      label: "Rodzaj tektury",
-      name: "material",
-    },
-    {
-      type: "choice",
-      options: [
-        {
-          name: "Karton szary",
-          value: 1,
-        },
-        {
-          name: "Karton biały",
-          value: 1.2,
-        },
-      ],
-      initialValue: 1,
-      label: "Kolor kartonu",
-      name: "color",
-    },
-    {
       type: "real",
       min: 10,
       max: 500,
@@ -79,6 +47,39 @@ const item: Item = {
       step: 1,
     },
     {
+      type: "toggle",
+      options: [
+        {
+          name: "Fala E (1,5)",
+          value: 1,
+        },
+        {
+          name: "Fala B (2,6)",
+          value: 1.3,
+        },
+      ],
+      initialValue: 1,
+      label: "Rodzaj tektury (grubość [mm])",
+      name: "material",
+    },
+    {
+      type: "choice",
+      options: [
+        {
+          name: "Karton szary",
+          value: 1,
+        },
+        {
+          name: "Karton biały",
+          value: 1.2,
+        },
+      ],
+      initialValue: 1,
+      label: "Kolor kartonu",
+      name: "color",
+    },
+
+    {
       type: "int",
       initialValue: 1,
       label: "Ilość sztuk",
@@ -87,16 +88,39 @@ const item: Item = {
   ],
   breadCrumbs: ["Kartony24", "Kartony", "Kartony na wymiar"],
   formula: (context) =>
-    (context["length"] + context["width"] + context["height"]) *
-    0.01 *
-    context["color"] *
-    context["material"],
+    (context["length"] * context["height"] * 2 +
+      context["height"] * context["width"] * 2 +
+      context["width"] * context["length"] * 2) *
+      0.00001 *
+      context["color"] *
+      context["material"] +
+    2,
+
+  parameters: [
+    {
+      name: "Rodzaj produktu",
+      value: "Karton automatyczny z paskiem klejowym",
+    },
+    { name: "Materiał", value: "Tektura 3-warstwowa" },
+    { name: "Gramatura", value: "360 g/m2" },
+    { name: "Pojemność maksymalna", value: "20 L" },
+    { name: "Lokalizacja paska klejowego", value: "Na bocznej ścianie" },
+    {
+      name: "Funkcjonalność",
+      value: "Automatyczne dno, pasek klejowy",
+    },
+    { name: "Czas montażu", value: "Złożenie w 2 sekundy bez użycia taśmy" },
+    { name: "Ułatwienia dla klienta", value: "Łatwe otwieranie dzięki zrywce" },
+  ],
 };
 
-export const KARTONY24_MOCKUP: Mockup = {
+export const KARTONY_MOCKUP: Mockup = {
   item: item,
-  companyLogoUrl: "https://wyceny.kartony24.eu/lp/img/logo.png",
-  logoOnBackground: true,
-  primaryColor: "#7d4683",
-  companyName: "Kartony24",
+  companyLogoUrl: "https://kartoniki.pl/wp-content/uploads/2022/08/logo.jpg",
+  logoOnBackground: false,
+  primaryColor: "#222222",
+  // primaryColor: "#7d4683",
+  secondaryColor: "#b0825f",
+  configColor: "#b0825f",
+  companyName: "kartoniki",
 };

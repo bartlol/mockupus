@@ -21,6 +21,7 @@ export const VariableStepper = ({ label, onChange, value }: Props) => {
       type="number"
       value={value}
       onChange={onQuantityChanged}
+      color="config"
     />
   );
 };

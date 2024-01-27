@@ -21,7 +21,7 @@ export const VariableChoice = ({ variable, onChange, value }: Props) => {
   };
 
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth color="config">
       <InputLabel id="demo-simple-select-label">{variable.label}</InputLabel>
       <Select
         labelId="demo-simple-select-label"

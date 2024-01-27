@@ -11,7 +11,10 @@ export const Root = () => {
         <Link to={`okna`}>okna</Link>
       </li>
       <li>
-        <Link to={`kartony24`}>kartony24</Link>
+        <Link to={`kartony`}>kartony</Link>
+      </li>
+      <li>
+        <Link to={`lustra`}>lustra</Link>
       </li>
     </ul>
   );

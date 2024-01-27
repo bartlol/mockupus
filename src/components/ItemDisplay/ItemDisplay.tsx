@@ -93,7 +93,12 @@ export const ItemDisplay = ({ item }: Props) => {
                 formula={item.formula}
               />
             </ColumnStack>
-            <Button variant="contained" startIcon={<AddShoppingCartIcon />}>
+            <Button
+              variant="contained"
+              color="config"
+              startIcon={<AddShoppingCartIcon />}
+              sx={{ color: (theme) => theme.palette.config.contrastText }}
+            >
               Dodaj do koszyka
             </Button>
             <Divider />
@@ -120,7 +125,7 @@ export const ItemDisplay = ({ item }: Props) => {
           </ColumnStack>
         </CardSection>
       </RowStack>
-      <Parameters />
+      <Parameters parameters={item.parameters} />
       <Description description={item.description} />
       <ItemOpinions opinions={item.opinions} />
     </ColumnStack>

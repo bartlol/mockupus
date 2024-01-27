@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Formula } from "./Formula";
 import { Opinion } from "./Opinion";
 import { Variable } from "./Variable";
+import { Parameter } from "../components/Parameters/Parameters";
 
 export type Item = {
   name: string;
@@ -13,4 +14,5 @@ export type Item = {
   variables: Variable[];
   breadCrumbs: string[];
   formula: Formula;
+  parameters: Parameter[];
 };

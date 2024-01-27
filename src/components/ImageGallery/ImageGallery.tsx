@@ -29,6 +29,7 @@ export const ImageGallery = ({ imageUrls }: Props) => {
         sx={{
           maxWidth: "400px",
           height: "400px",
+          borderRadius: 2,
         }}
       />
       <IconButton

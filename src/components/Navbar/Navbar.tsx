@@ -18,35 +18,36 @@ export const Navbar = ({ logo }: Props) => {
           justifyContent: "space-between",
         }}
       >
-        {logo}
+        <Box sx={{ m: 0.5 }}>{logo}</Box>
         <RowStack gap={4}>
           <SearchBar />
           <RowStack>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.secondary.main,
+              }}
+            >
               <MailIcon />
             </IconButton>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.secondary.main,
+              }}
+            >
               <Badge badgeContent={2} color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
-            <IconButton>
+            <IconButton
+              sx={{
+                color: (theme) => theme.palette.secondary.main,
+              }}
+            >
               <AccountCircle />
             </IconButton>
           </RowStack>
         </RowStack>
       </Toolbar>
     </AppBar>
-    // <Box
-    //   sx={{
-    //     display: "flex",
-    //     flexDirection: "row",
-    //     gap: 1,
-    //   }}
-    // >
-    //   <Logo />
-    //   <p>Zaloguj sie</p>
-    //   <p>Elo</p>
-    // </Box>
   );
 };

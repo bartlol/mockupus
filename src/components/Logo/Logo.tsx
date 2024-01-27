@@ -14,8 +14,9 @@ export const Logo = ({ logoUrl, withBackground = false }: Props) => {
       src={logoUrl}
       sx={{
         height: withBackground ? "32px" : "64px",
-        mixBlendMode: "multiply",
+        // mixBlendMode: "multiply",
         objectFit: "contain",
+        borderRadius: 2,
       }}
       alt="Logo sklepu"
     />

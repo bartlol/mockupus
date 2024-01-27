@@ -35,7 +35,7 @@ export const Footer = ({ logo, companyName }: Props) => {
               <Link
                 href={"#"}
                 sx={{
-                  color: (theme) => theme.palette.primary.contrastText,
+                  color: (theme) => theme.palette.secondary.main,
                 }}
                 variant="h4"
               >
@@ -53,13 +53,13 @@ export const Footer = ({ logo, companyName }: Props) => {
             <Link
               href={"#"}
               sx={{
-                color: (theme) => theme.palette.primary.contrastText,
+                color: (theme) => theme.palette.secondary.main,
               }}
-            >{`biuro@${companyName.toLowerCase()}.pl`}</Link>
+            >{`biuro@${companyName.toLowerCase().replace(" ", "")}.pl`}</Link>
             <Link
               href={"#"}
               sx={{
-                color: (theme) => theme.palette.primary.contrastText,
+                color: (theme) => theme.palette.secondary.main,
               }}
             >
               Dane kontaktowe
@@ -71,7 +71,7 @@ export const Footer = ({ logo, companyName }: Props) => {
               fontWeight={"bold"}
               variant="subtitle1"
               sx={{
-                color: (theme) => theme.palette.primary.contrastText,
+                color: (theme) => theme.palette.secondary.main,
               }}
             >
               Ważne linki
@@ -114,7 +114,7 @@ export const Footer = ({ logo, companyName }: Props) => {
           </RowStack>
           <Divider flexItem />
         </ColumnStack>
-        <ColumnStack sx={{ alignItems: "center" }} gap={0}>
+        <ColumnStack sx={{ alignItems: "center", mt: 1 }} gap={1}>
           {logo}
           <RowStack gap={0}>
             <IconButton

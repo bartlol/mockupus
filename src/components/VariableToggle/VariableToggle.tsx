@@ -14,7 +14,7 @@ export const VariableToggle = ({ value, onChange, label }: Props) => {
   return (
     <FormControlLabel
       control={
-        <Switch color="primary" checked={value} onChange={handleChange} />
+        <Switch color="config" checked={value} onChange={handleChange} />
       }
       label={label}
       labelPlacement="end"

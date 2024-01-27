@@ -12,20 +12,29 @@ import SearchIcon from "@mui/icons-material/Search";
 export const SearchBar = () => {
   return (
     <Box
-      sx={{
-        backgroundColor: (theme) => alpha(theme.palette.common.black, 0.05),
+      sx={(theme) => ({
+        backgroundColor: alpha(theme.palette.primary.contrastText, 0.12),
         borderRadius: 2,
         paddingX: 2,
-        borderColor: (theme) => alpha(theme.palette.common.black, 0.1),
+        borderColor: alpha(theme.palette.primary.contrastText, 0.2),
         borderStyle: "solid",
         borderWidth: "1px",
         ":hover": {
-          backgroundColor: (theme) => alpha(theme.palette.common.black, 0.1),
+          backgroundColor: alpha(theme.palette.primary.contrastText, 0.15),
         },
-      }}
+      })}
     >
-      <InputBase placeholder="Szukaj..."></InputBase>
-      <IconButton>
+      <InputBase
+        placeholder="Szukaj..."
+        sx={{
+          color: (theme) => theme.palette.primary.contrastText,
+        }}
+      ></InputBase>
+      <IconButton
+        sx={{
+          color: (theme) => alpha(theme.palette.primary.contrastText, 0.7),
+        }}
+      >
         <SearchIcon />
       </IconButton>
     </Box>
