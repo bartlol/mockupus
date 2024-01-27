@@ -30,7 +30,7 @@ export const VariableColorChoice = ({ variable, onChange, value }: Props) => {
         value={value}
         exclusive
         onChange={handleChange}
-        color="primary"
+        color="config"
       >
         {variable.options.map((option) => (
           <ToggleButton value={option.value} key={option.name}>
