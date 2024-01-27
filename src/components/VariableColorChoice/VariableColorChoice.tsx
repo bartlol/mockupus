@@ -3,19 +3,22 @@ import {
   InputLabel,
   ToggleButton,
   ToggleButtonGroup,
+  Box,
+  Tooltip,
 } from "@mui/material";
 import React from "react";
-import { ToggleVariable } from "../../Models/Variable";
+import { ColorChoiceVariable } from "../../Models/Variable";
 import { ColumnStack } from "../ColumnStack/ColumnStack";
 
 type Props = {
   onChange: (value: number) => void;
   value: number;
-  variable: ToggleVariable;
+  variable: ColorChoiceVariable;
 };
 
-export const VariableToggleChoice = ({ variable, onChange, value }: Props) => {
+export const VariableColorChoice = ({ variable, onChange, value }: Props) => {
   const handleChange = (event: SelectChangeEvent) => {
+    console.log(event.target);
     onChange(Number(event.target.value));
   };
 
@@ -27,13 +30,20 @@ export const VariableToggleChoice = ({ variable, onChange, value }: Props) => {
         value={value}
         exclusive
         onChange={handleChange}
-        aria-label="text alignment"
-        color="config"
-        sx={{ width: "100%" }}
+        color="primary"
       >
         {variable.options.map((option) => (
-          <ToggleButton value={option.value} key={option.name} sx={{ flex: 1 }}>
-            {option.name}
+          <ToggleButton value={option.value} key={option.name}>
+            <Box
+              sx={{
+                backgroundColor: option.color,
+                width: "32px",
+                height: "32px",
+                borderRadius: "100%",
+                boxShadow: "0px 0px 8px -4px #000000",
+                pointerEvents: "none",
+              }}
+            />
           </ToggleButton>
         ))}
       </ToggleButtonGroup>

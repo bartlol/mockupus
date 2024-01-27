@@ -63,22 +63,23 @@ const item: Item = {
       name: "material",
     },
     {
-      type: "choice",
+      type: "colorChoice",
       options: [
         {
-          name: "Karton szary",
-          value: 1,
+          name: "Szary",
+          value: 1.0,
+          color: "#eac89a",
         },
         {
-          name: "Karton biały",
+          name: "Biały",
           value: 1.2,
+          color: "#ffffff",
         },
       ],
-      initialValue: 1,
+      initialValue: 1.0,
       label: "Kolor kartonu",
       name: "color",
     },
-
     {
       type: "int",
       initialValue: 1,

@@ -3,7 +3,8 @@ export type Variable =
   | BooleanVariable
   | IntegerVariable
   | ChoiceVariable
-  | ToggleVariable;
+  | ToggleVariable
+  | ColorChoiceVariable;
 
 type BooleanVariable = {
   type: "boolean";
@@ -52,7 +53,19 @@ export type ToggleVariable = {
   unit?: string;
 };
 
+export type ColorChoiceVariable = {
+  type: "colorChoice";
+  options: ChoiceColorVariable[];
+  name: string;
+  label: string;
+  initialValue: number;
+};
+
 type ChoiceVariableOption = {
   name: string;
   value: number;
+};
+
+type ChoiceColorVariable = ChoiceVariableOption & {
+  color: string;
 };

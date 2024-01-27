@@ -4,11 +4,11 @@ import { VariableSlider } from "../VariableSlider/VariableSlider";
 import { useDynamicPriceReducer } from "../../hooks/dynamicPriceReducer";
 import { VariableToggle } from "../VariableToggle/VariableToggle";
 import { Price } from "../Price/Price";
-import { ListItemText, MenuItem, TextField, Typography } from "@mui/material";
 import { VariableStepper } from "../VariableStepper/VariableStepper";
 import { VariableChoice } from "../VariableChoice/VariableChoice";
 import { VariableToggleChoice } from "../VariableToggleChoice/VariableToggleChoice";
 import { ColumnStack } from "../ColumnStack/ColumnStack";
+import { VariableColorChoice } from "../VariableColorChoice/VariableColorChoice";
 
 type Props = {
   variables: Variable[];
@@ -79,6 +79,7 @@ export const DynamicVariables = ({ variables, formula }: Props) => {
                 onChange={onChangeHandler}
                 value={value}
                 variable={variable}
+                key={variable.name}
               />
             );
           case "toggle":
@@ -87,6 +88,16 @@ export const DynamicVariables = ({ variables, formula }: Props) => {
                 onChange={onChangeHandler}
                 value={value}
                 variable={variable}
+                key={variable.name}
+              />
+            );
+          case "colorChoice":
+            return (
+              <VariableColorChoice
+                onChange={onChangeHandler}
+                value={value}
+                variable={variable}
+                key={variable.name}
               />
             );
         }

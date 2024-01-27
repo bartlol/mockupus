@@ -104,6 +104,7 @@ export const Footer = ({ logo, companyName }: Props) => {
                       sx={{
                         color: (theme) => theme.palette.primary.contrastText,
                       }}
+                      key={text}
                     >
                       {text}
                     </Link>

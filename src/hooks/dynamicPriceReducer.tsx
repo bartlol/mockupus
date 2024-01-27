@@ -14,6 +14,7 @@ type Action<T extends object> = {
 
 // Reducer function to handle the actions
 function reducer<T extends object>(state: T, action: Action<T>): T {
+  console.log(state);
   switch (action.type) {
     case "SET_VARIABLE":
       return {
