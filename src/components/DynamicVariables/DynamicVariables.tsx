@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Variable } from "../../Models/Variable";
 import { VariableSlider } from "../VariableSlider/VariableSlider";
 import { useDynamicPriceReducer } from "../../hooks/dynamicPriceReducer";
@@ -9,28 +9,19 @@ import { VariableChoice } from "../VariableChoice/VariableChoice";
 import { VariableToggleChoice } from "../VariableToggleChoice/VariableToggleChoice";
 import { ColumnStack } from "../ColumnStack/ColumnStack";
 import { VariableColorChoice } from "../VariableColorChoice/VariableColorChoice";
+import { DynamicPriceContext } from "../../context/DynamicPriceContextProvider";
 
 type Props = {
   variables: Variable[];
   formula: string;
 };
 
-function variablesToInitialState(variables: Variable[]) {
-  const initialState = {};
-  variables.forEach(
-    (variable) => (initialState[variable.name] = variable.initialValue)
-  );
-  return initialState;
-}
-
 const executeFormula = (formula: string, context: any) => {
   return (eval(formula) as number).toFixed(2);
 };
 
 export const DynamicVariables = ({ variables, formula }: Props) => {
-  const [state, dispatch] = useDynamicPriceReducer(
-    variablesToInitialState(variables)
-  );
+  const { state, dispatch } = useContext(DynamicPriceContext);
 
   return (
     <ColumnStack gap={3}>

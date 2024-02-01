@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Logo } from "../../components/Logo/Logo";
 import { Footer } from "../../components/Footer/Footer";
+import { ExampleContextProvider } from "../../context/DynamicPriceContextProvider";
 
 type Props = {
   mockup: Mockup;
@@ -80,7 +81,9 @@ export const MockupPage = ({ mockup }: Props) => {
           />
         }
       >
-        <ItemDisplay item={mockup.item} />
+        <ExampleContextProvider variables={mockup.item.variables}>
+          <ItemDisplay item={mockup.item} />
+        </ExampleContextProvider>
       </PageLayout>
     </ThemeProvider>
   );

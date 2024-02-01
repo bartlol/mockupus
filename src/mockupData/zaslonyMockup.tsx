@@ -7,12 +7,23 @@ const item: Item = {
   name: "Zasłona z miękkiej półmatowej tkaniny welwetowej",
   productId: "84672ffc",
   description: ZaslonyDescription,
-  // "Produkt polskiej produkcji\nGablota gotowa do użytku\nBardzo wysoka jakoś wykonania",
-  photoUrls: [
-    "https://efpim.eurofirany.com.pl/product_images/7c/20/306859/image-thumb__306859__PC_SI-EURO-550/7c20bb3b090cc8873b6c55f146aa80fb.webp",
-    "https://efpim.eurofirany.com.pl/product_images/2f/9a/306865/image-thumb__306865__PC_SI-EURO-550/2f9ad8cbf8b8975834eab729690a37ed.webp",
-    "https://efpim.eurofirany.com.pl/product_images/42/a8/306866/image-thumb__306866__PC_SI-EURO-550/42a81e2e1e82996f779a2f3ab231fe20.webp",
-  ],
+  photoUrls: {
+    1.0: [
+      "https://efpim.eurofirany.com.pl/product_images/dd/9e/52773/image-thumb__52773__PC_SI-EURO-550/dd9ec46464df39e320580056bbca71c4.webp",
+      "https://efpim.eurofirany.com.pl/product_images/04/45/52778/image-thumb__52778__PC_SI-EURO-550/0445adc44a0bc502039e6f6f293a2abe.webp",
+      "https://efpim.eurofirany.com.pl/product_images/32/34/52776/image-thumb__52776__PC_SI-EURO-550/32345d4162762bf855255f081f09b324.webp",
+    ],
+    1.05: [
+      "https://efpim.eurofirany.com.pl/product_images/70/fb/370436/image-thumb__370436__PC_SI-EURO-550/70fb49754dde15cc1a8f9a574098ba5c.webp",
+      "https://efpim.eurofirany.com.pl/product_images/4b/04/370443/image-thumb__370443__PC_SI-EURO-550/4b0451e96b8cd8918e81b534c540d29c.webp",
+      "https://efpim.eurofirany.com.pl/product_images/22/40/370442/image-thumb__370442__PC_SI-EURO-550/2240f1e76dd10a934bfae642f733e897.webp",
+    ],
+    1.1: [
+      "https://efpim.eurofirany.com.pl/product_images/40/e2/157285/image-thumb__157285__PC_SI-EURO-550/40e22feb8d42101be8e0e639f3cbc169.webp",
+      "https://efpim.eurofirany.com.pl/product_images/1c/12/157289/image-thumb__157289__PC_SI-EURO-550/1c12fae90367d0a56dba1b476c2353b0.webp",
+      "https://efpim.eurofirany.com.pl/product_images/22/95/157288/image-thumb__157288__PC_SI-EURO-550/22956ec431344c8939b7d63c80f98ee9.webp",
+    ],
+  },
   rating: 4.81,
   opinions: GENERIC_OPINIONS,
   variables: [
@@ -56,35 +67,19 @@ const item: Item = {
       type: "colorChoice",
       options: [
         {
-          name: "Poseidon",
+          name: "Silver",
           value: 1.0,
-          color: "#133955",
+          color: "#adb8b9",
         },
         {
-          name: "LightSkyBlue",
-          value: 1.01,
-          color: "#87CEFA",
-        },
-        {
-          name: "Olive",
-          value: 1.02,
-          color: "#808000",
-        },
-        {
-          name: "Orchid",
-          value: 1.03,
-          color: "#DA70D6",
-        },
-
-        {
-          name: "LavenderBlush",
-          value: 1.04,
-          color: "#FFF0F5",
-        },
-        {
-          name: "Wheat",
+          name: "Jasnowrzosowy",
           value: 1.05,
-          color: "#F5DEB3",
+          color: "#9e7266",
+        },
+        {
+          color: "#215b3a",
+          value: 1.1,
+          name: "ButelkowyZielony",
         },
       ],
       initialValue: 1.0,
@@ -114,7 +109,6 @@ const item: Item = {
       label: "Kolor przelotki",
       name: "guideColor",
     },
-
     {
       type: "int",
       initialValue: 1,

@@ -8,7 +8,7 @@ export type Item = {
   name: string;
   productId: string;
   description: () => JSX.Element;
-  photoUrls: string[];
+  photoUrls: Record<number, string[]>;
   rating: number;
   opinions: Opinion[];
   variables: Variable[];

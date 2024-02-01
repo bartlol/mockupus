@@ -1,9 +1,7 @@
-import React from "react";
-import { DynamicPrice } from "../DynamicPrice";
+import React, { useContext } from "react";
 import {
   Box,
   Button,
-  Container,
   Divider,
   IconButton,
   Link,
@@ -27,11 +25,14 @@ import { CategoryBreadcrumbs } from "../CategoryBreadcrumbs/CategoryBreadcrumbs"
 import { CardSection } from "../../layout/CardSection";
 import { Parameters } from "../Parameters/Parameters";
 import { Description } from "../Description/Description";
+import { DynamicPriceContext } from "../../context/DynamicPriceContextProvider";
 type Props = {
   item: Item;
 };
 
 export const ItemDisplay = ({ item }: Props) => {
+  const { state } = useContext(DynamicPriceContext);
+  console.log("FOO", state);
   return (
     <ColumnStack gap={4} sx={{ maxWidth: "940px" }}>
       <Box>
@@ -77,7 +78,7 @@ export const ItemDisplay = ({ item }: Props) => {
               </RowStack>
             </Box>
             <Box sx={{ alignSelf: "center" }}>
-              <ImageGallery imageUrls={item.photoUrls} />
+              <ImageGallery imageUrls={item.photoUrls[state["color"]]} />
             </Box>
           </ColumnStack>
         </CardSection>
