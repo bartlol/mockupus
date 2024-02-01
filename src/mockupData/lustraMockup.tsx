@@ -7,11 +7,10 @@ const item: Item = {
   name: "Lustro prostokąt z czarną ramą lustrzaną",
   productId: "84672ffc",
   description: LustraDescription,
-  photoUrls: [
-    "https://mchome.pl/userdata/public/gfx/14990/LUSTRO-PROSTOKAT-ROZMIAR-L-Z-CZARNA-RAMA-LUSTRZANA-NA-ZAMOWIENIE-DOWOLNY-WYMIAR--VENUS-BLACK-.jpg",
-    "https://mchome.pl/userdata/public/gfx/40199/_styl-hampton-elegance.jpg",
-    "https://mchome.pl/userdata/public/gfx/40201/27E658DD-D35D-44B2-9FCD-C729AECB8798.jpg",
-  ],
+  photoUrls: {
+    1.0: ["lustro-srebrne-0.jpg", "lustro-srebrne-1.jpg"],
+    1.1: ["lustro-zlote-0.jpg", "lustro-zlote-1.jpg"],
+  },
   rating: 4.81,
   opinions: GENERIC_OPINIONS,
   variables: [
@@ -36,20 +35,22 @@ const item: Item = {
       step: 1,
     },
     {
-      type: "toggle",
+      type: "colorChoice",
       options: [
         {
-          name: "brązowe",
+          name: "srebrne",
           value: 1.0,
+          color: "#ccc8c0",
         },
         {
-          name: "srebrne",
+          name: "zlote",
           value: 1.1,
+          color: "#deb672",
         },
       ],
       initialValue: 1,
-      label: "Typ lustra",
-      name: "mirrorType",
+      label: "Kolor ramy",
+      name: "color",
     },
     {
       type: "toggle",
@@ -86,7 +87,7 @@ const item: Item = {
   ],
   formula: (context) =>
     150 +
-    context["width"] * context["height"] * 0.02 * context["mirrorType"] +
+    context["width"] * context["height"] * 0.02 * context["color"] +
     context["accessories"],
   parameters: [
     { name: "Pozycjonowanie", value: "Podłóżne, proste" },

@@ -7,12 +7,10 @@ const item: Item = {
   name: "Karton automatyczny z paskiem klejowym",
   productId: "84672ffc",
   description: Kartony24Description,
-  // "Produkt polskiej produkcji\nGablota gotowa do użytku\nBardzo wysoka jakoś wykonania",
-  photoUrls: [
-    "https://kartony24.eu/userdata/public/gfx/36050/Karton-automatyczny-z-paskiem-klejowym-400x300x190-zamkniety.webp",
-    "https://kartony24.eu/userdata/public/gfx/36049/Karton-automatyczny-z-paskiem-klejowym-i-zrywka-400x300x190.webp",
-    "https://kartony24.eu/userdata/public/gfx/36053/Karton-automatyczny-z-paskiem-klejowym-400x300x190-pasek-klejowy.webp",
-  ],
+  photoUrls: {
+    1.0: ["karton-szary-zamkniety.webp", "karton-szary-otwarty.webp"],
+    1.2: ["karton-bialy-zamkniety.webp", "karton-bialy-otwarty.webp"],
+  },
   rating: 4.81,
   opinions: GENERIC_OPINIONS,
   variables: [
