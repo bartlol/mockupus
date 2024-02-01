@@ -8,8 +8,14 @@ const item: Item = {
   productId: "84672ffc",
   description: Kartony24Description,
   photoUrls: {
-    1.0: ["karton-szary-zamkniety.webp", "karton-szary-otwarty.webp"],
-    1.2: ["karton-bialy-zamkniety.webp", "karton-bialy-otwarty.webp"],
+    1.0: [
+      "karton-szary-zamkniety-z-wymiarami.webp",
+      "karton-szary-otwarty.webp",
+    ],
+    1.2: [
+      "karton-bialy-zamkniety-z-wymiarami.webp",
+      "karton-bialy-otwarty.webp",
+    ],
   },
   rating: 4.81,
   opinions: GENERIC_OPINIONS,
