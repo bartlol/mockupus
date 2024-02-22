@@ -4,11 +4,12 @@ import { GENERIC_OPINIONS } from "./genericOpinions";
 import { Kartony24Description } from "../components/Descriptions/Kartony24Description";
 
 const item: Item = {
-  name: "Karton automatyczny z paskiem klejowym",
+  name: "Karton klapkowy",
   productId: "84672ffc",
   description: Kartony24Description,
   photoUrls: {
     1.0: [
+      "Pudelko.png",
       "karton-szary-zamkniety-z-wymiarami.webp",
       "karton-szary-otwarty.webp",
     ],
@@ -91,7 +92,7 @@ const item: Item = {
       name: "quantity",
     },
   ],
-  breadCrumbs: ["Kartony24", "Kartony", "Kartony na wymiar"],
+  breadCrumbs: ["Kartony", "Kartony na wymiar"],
   formula: (context) =>
     (context["length"] * context["height"] * 2 +
       context["height"] * context["width"] * 2 +
@@ -104,7 +105,7 @@ const item: Item = {
   parameters: [
     {
       name: "Rodzaj produktu",
-      value: "Karton automatyczny z paskiem klejowym",
+      value: "Karton klapkowy",
     },
     { name: "Materiał", value: "Tektura 3-warstwowa" },
     { name: "Gramatura", value: "360 g/m2" },
