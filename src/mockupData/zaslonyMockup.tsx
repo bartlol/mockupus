@@ -14,6 +14,7 @@ const item: Item = {
       "https://efpim.eurofirany.com.pl/product_images/32/34/52776/image-thumb__52776__PC_SI-EURO-550/32345d4162762bf855255f081f09b324.webp",
     ],
     1.05: [
+      "Zaslona.jpg",
       "https://efpim.eurofirany.com.pl/product_images/70/fb/370436/image-thumb__370436__PC_SI-EURO-550/70fb49754dde15cc1a8f9a574098ba5c.webp",
       "https://efpim.eurofirany.com.pl/product_images/4b/04/370443/image-thumb__370443__PC_SI-EURO-550/4b0451e96b8cd8918e81b534c540d29c.webp",
       "https://efpim.eurofirany.com.pl/product_images/22/40/370442/image-thumb__370442__PC_SI-EURO-550/2240f1e76dd10a934bfae642f733e897.webp",

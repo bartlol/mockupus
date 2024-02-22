@@ -4,11 +4,11 @@ import { GENERIC_OPINIONS } from "./genericOpinions";
 import { LustraDescription } from "../components/Descriptions/LustraDescription";
 
 const item: Item = {
-  name: "Lustro prostokąt z czarną ramą lustrzaną",
+  name: "Lustro srebrne w ramie aluminiowej",
   productId: "84672ffc",
   description: LustraDescription,
   photoUrls: {
-    1.0: ["lustro-srebrne-0.jpg", "lustro-srebrne-1.jpg"],
+    1.0: ["Lustro.jpg", "lustro-srebrne-0.jpg", "lustro-srebrne-1.jpg"],
     1.1: ["lustro-zlote-0.jpg", "lustro-zlote-1.jpg"],
   },
   rating: 4.81,
