@@ -4,9 +4,7 @@ import { Typography } from "@mui/material";
 export const Kartony24Description = () => {
   return (
     <>
-      <Typography fontWeight={"bold"}>
-        Karton automatyczny z paskiem klejowym{" "}
-      </Typography>
+      <Typography fontWeight={"bold"}>Karton klapkowy </Typography>
       <Typography fontWeight={"bold"}>Szybki i wygodny w pakowaniu</Typography>
       <Typography>
         Pudełko wykonane z tektury 3-warstwowej o fali B - gramatura 360 g/m2 o
