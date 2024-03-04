@@ -17,6 +17,7 @@ export const Logo = ({ logoUrl, withBackground = false }: Props) => {
         // mixBlendMode: "multiply",
         objectFit: "contain",
         borderRadius: 2,
+        visibility: "hidden",
       }}
       alt="Logo sklepu"
     />
@@ -30,6 +31,7 @@ export const Logo = ({ logoUrl, withBackground = false }: Props) => {
           m: 1,
           backgroundColor: (theme) => theme.palette.primary.light,
           borderRadius: 4,
+          visibility: "hidden",
         }}
       >
         {logo}
